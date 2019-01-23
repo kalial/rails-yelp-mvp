@@ -1,0 +1,30 @@
+<!--
+  The applicaton layout can include a Bootstrap navbar with links to the list of restaurants and to the restaurant creation form.
+  Forms can be placed in a partial to make your HTML more readable.
+-->
+<h1>Restaurants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>adress</th>
+      <th>phone_number</th>
+      <th>category</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.address %></td>
+          <td><%= restaurant.phone_number %></td>
+          <td><%= restaurant.category %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

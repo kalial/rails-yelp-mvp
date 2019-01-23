@@ -1,0 +1,14 @@
+<div class="Container">
+  <h1>Review</h1>
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :content, placeholder: "Write anything \"#{@restaurant.name}\""%>
+      <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
+      <%= f.submit 'Post!', class: 'btn btn-primary' %>
+      <!--<%= f.submit%>-->
+<% end %>
+</div>
+
+<p><%= link_to "Back to Restaurant", restaurant_path(@restaurant) %></p>
+<!--
+  https://github.com/plataformatec/simple_form
+-->
